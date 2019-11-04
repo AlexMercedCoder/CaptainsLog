@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ./partials/head.ejs %>
+    </head>
+    <body>
+
+
+        <header>
+            <% include ./partials/header.ejs%>
+        </header>
+        <h1>login</h1>
+        <!--  NOTE: action will be the route, method will be the HTTP verb-->
+        <form action="/login" method="POST">
+            Username: <input type="text" name="username" /><br/>
+            Password: <input type="password" name="password" /><br/>
+            <input type="submit" name="" value="Login"/>
+        </form>
+    </body>
+</html>

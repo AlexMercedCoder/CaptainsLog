@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <% include ./partials/head.ejs %>
+    </head>
+
+
+    <!-- THE BODY OF THE WEBSITE -->
+    <body>
+
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
+
+
+
+
+
+<!-- CONTENT OF PAGE BEGINS -->
+        <main>
+            <a href="/index/new/">Create a Log</a>
+            <div class="container">
+
+
+
+                <div class="log">
+
+                    <form action="/index/<%=data.id%>?_method=PUT" method="POST">
+
+                        Title: <input type="text" name="title" value="<%=data.title%>"/><br/>
+                        <textarea name="entry"><%=data.title%></textarea>
+                        Ship is Broken: <input type="checkbox" name="shipIsBroken"
+                        <% if(data.shipIsBroken === true){ %>
+                            checked
+                        <% } %>
+                         /><br/>
+                        <input type="submit" name="" value="Edit Log"/>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+
+        </main>
+<!-- CONTENT OF PAGE ENDS -->
+
+
+
+
+
+
+
+        <footer>
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+
+    </body>
+    <!-- END OF THE HTML FILE -->
+
+</html>

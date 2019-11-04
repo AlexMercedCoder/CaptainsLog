@@ -1,0 +1,5 @@
+body {width: 80%; margin: 10px auto;}
+
+.log {display: flex; flex-wrap: wrap;justify-content: space-around;}
+
+.welcome {display: flex; justify-content: center; align-items: center; height: 500px;}

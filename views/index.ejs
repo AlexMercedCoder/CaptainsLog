@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <% include ./partials/head.ejs %>
+    </head>
+
+
+    <!-- THE BODY OF THE WEBSITE -->
+    <body>
+
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
+
+
+
+
+
+<!-- CONTENT OF PAGE BEGINS -->
+        <main>
+            <div class="container">
+                <div class="log">
+                <% for (logs in data){%>
+                <%console.log(logs)%>
+
+                <div class="card" style="width: 300px;">
+  <div class="card-divider">
+    <%= data[logs].title %>
+  </div>
+  <img src="https://sacredlotuslove.com/wp-content/uploads/SLL-Journals-0757057.jpg">
+  <div class="card-section">
+      <p>Date: <%= moment(data[logs].date).format('YYYY-MM-DD')%></p>
+      <p>ENTRY: <%= data[logs].entry %></p>
+      <p>Is Ship Broken: <%= data[logs].shipIsBroken %></p>
+
+      <a href="/index/<%= data[logs].id %>/edit/">Edit Log</a>
+      <form action="/index/<%=data[logs].id %>?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE"/>
+      </form>
+  </div>
+</div>
+  <!-- ... -->
+
+
+
+
+
+
+
+                <%}%>
+
+</div>
+
+            </div>
+
+
+
+        </main>
+<!-- CONTENT OF PAGE ENDS -->
+
+
+
+
+
+
+
+        <footer>
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+
+    </body>
+    <!-- END OF THE HTML FILE -->
+
+</html>
